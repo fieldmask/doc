@@ -3,12 +3,12 @@ import { setBaseUrl } from './base.js'
 import { Header } from './components/header.js'
 import { Footer } from './components/footer.js'
 
-setBaseUrl();
-
 Header();
 Footer();
 
-astronaut.codeviewer()
+setBaseUrl();
+
+if(typeof astronaut != 'undefined') astronaut.codeviewer()
 
 document.querySelectorAll('a[hyperlink]').forEach((e) => {
     e.onclick = function () {
@@ -16,7 +16,7 @@ document.querySelectorAll('a[hyperlink]').forEach((e) => {
     }
 })
 
-fieldmask({
+if(typeof fieldmask != 'undefined') fieldmask({
     'real': ['00,00', {prefix: 'R$', reverse: true}],
     'date': '00-00-0000',
     'demo': '',
