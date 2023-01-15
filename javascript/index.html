@@ -1,0 +1,148 @@
+<!DOCTYPE html >
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FieldMask.js - Masking for Input</title>
+
+    <!-- Metas -->
+    <meta name="description" content="A simple masking library for javascript input">
+
+      <!-- facebook -->
+      <meta property="og:title" content="FieldMask.js - Masking for Input">
+      <meta property="og:description" content="A simple masking library for javascript input">
+      <meta property="og:image" content="">
+
+      <!-- twitter -->
+      <meta name="twitter:title" content="FieldMask.js - Masking for Input">
+      <meta name="twitter:description" content="A simple masking library for javascript input">
+      <meta name="twitter:image" content="">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0f0f10">
+
+    <!-- Icons -->
+<!--     <link rel="icon" href="src/assets/img/html.icon.svg">
+    <link rel="apple-touch-icon" href="src/assets/img/html.icon.svg"> -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../src/css/app.css">
+  </head>
+
+  <body>
+    <header id="header"></header>
+    
+    <main>
+        <div class="container">
+            <section id="start" class="mb-5">
+                <li marker="✅">Release latest: v1.0.0</li>
+                <li marker="🔗"><a href="https://github.com/fieldmask/javascript">Open a issues</a></li>
+                <li marker="🔗"><a href="https://github.com/fieldmask/javascript">Repository</a></li>
+            </section>
+
+            <section id="installation" class="mb-5">
+                <a hyperlink href="#installation"><h3 class="mb-3">Installation</h3></a>
+                <div class="ast-codeviewer" data-lang="html" data-title="CDN">
+                    <script src="https://fieldmask.github.io/cdnjs/1.0.0/fieldmask.js"></script>
+                </div>
+                <br/>
+                <div class="ast-codeviewer" data-lang="bash" data-title="NPM">
+                    npm i @fieldmask/javascript
+                </div>
+            </section>
+
+            <section id="how-to-use" class="mb-5">
+                <a hyperlink href="#how-to-use"><h3 class="mb-3">How to use</h3></a>
+                <div class="ast-codeviewer" data-lang="html" data-title="HTML">
+                    <input type="text" fieldmask="cpf">
+                </div>
+                <br/>
+                <div class="ast-codeviewer" data-lang="javascript" data-title="JavaScript">
+                    fieldmask()
+                </div>
+            </section>
+
+            <section id="predefined-masks" class="mb-5">
+                <a hyperlink href="#predefined-masks"><h3 class="mb-3">Predefined Masks</h3></a>
+                <div id="predefined-masks-table"></div>
+            </section>
+
+            <section id="how-to-create-custom-mask" class="mb-5">
+                <a hyperlink href="#how-to-create-custom-mask"><h3 class="mb-3">⭐ How to create custom mask format</h3></a>
+                <p class="mb-3">Indicator for define mask: 0</p>
+                <h5 class="mb-3">- Example with string only</h5>
+                <div class="ast-codeviewer" data-lang="html" data-title="HTML">
+                    <input type="text" fieldmask="date">
+                </div>
+                <div class="ast-codeviewer" data-lang="javascript" data-title="JavaScript" data-copy="false">
+                    fieldmask({
+                        'date': '00-00-0000'
+                    })
+                </div>
+                <input type="text" class="form-control" fieldmask="date" placeholder="date mask example" >
+                <br/>
+                <h5 class="mb-3">- Mask options type</h5>
+                <div class="ast-codeviewer" data-lang="typescript" data-title="Type" data-copy="false">
+                    fieldmask({
+                        'customMaskName': string | [maskFormat, options?: {
+                            reverse: boolean, // Reverse the typing start side 
+                            prefix: string,   // prefix+mask
+                            suffix: string,   // mask+suffix
+                        }]
+                    })
+                </div>
+                <br/>
+                <h5 class="mb-3">- Example with options </h5>
+                <div class="ast-codeviewer" data-lang="html" data-title="HTML" data-copy="false">
+                    <input type="text" fieldmask="real">
+                </div>
+                <div class="ast-codeviewer" data-lang="javascript" data-title="JavaScript" data-copy="false">
+                    fieldmask({
+                        'real': ['00,00', {prefix: 'R$', reverse: true}]
+                    })
+                </div>
+     
+                <input type="text" class="form-control" fieldmask="real" placeholder="real mask example" >
+            </section>
+            <br/>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+    
+    <!-- JavaScript tags -->
+    <script src="../src/js/astronaut.library.js"></script>
+    <script src="../src/js/app.js" type="module"></script>
+
+    <script type="text/javascript" src="../src/js/fieldmask.js"></script>
+
+    <script>
+        astronaut.table({
+        selector: '#predefined-masks-table',
+        thead:['Mask Name','Mask Format'],
+        tbody:[
+            ['cpf -> attr:text','000.000.000-00 -> attr:text'],
+            ['cnpj -> attr:text','00.000.000/0000-00 -> attr:text'],
+            ['tel -> attr:text','0000-0000 -> attr:text'],
+            ['ddd+tel -> attr:text','(00) 0000-0000 -> attr:text'],
+            ['cel -> attr:text','00000-0000 -> attr:text'],
+            ['ddd+cel -> attr:text','(00) 00000-0000 -> attr:text'],
+            ['cep -> attr:text','00000-000 -> attr:text'],
+            ['date -> attr:text','00/00/0000 -> attr:text'],
+            ['time -> attr:text','00:00:00 -> attr:text'],
+            ['dateTime -> attr:text','00/00/0000 00:00:00 -> attr:text'],
+            ['currency -> attr:text','["000.000.000,00", { reverse: true}]'],
+            ['centimeter -> attr:text','["000", { reverse: true, suffix: "cm" }]'],
+            ['meter -> attr:text','["0000", { reverse: true, suffix: "m" }]'],
+            ['ip -> attr:text','000.000.000.000 -> attr:text'],
+            ['letter -> attr:text','[a-z] [A-Z] -> attr:text'],
+            ['number -> attr:text','[0-9] -> attr:text'],
+        ]
+        })
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html >
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FieldMask.js - Masking for Input</title>
+
+    <!-- Metas -->
+    <meta name="description" content="A simple masking library for javascript input">
+
+      <!-- facebook -->
+      <meta property="og:title" content="FieldMask.js - Masking for Input">
+      <meta property="og:description" content="A simple masking library for javascript input">
+      <meta property="og:image" content="">
+
+      <!-- twitter -->
+      <meta name="twitter:title" content="FieldMask.js - Masking for Input">
+      <meta name="twitter:description" content="A simple masking library for javascript input">
+      <meta name="twitter:image" content="">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0f0f10">
+
+    <!-- Icons -->
+<!--     <link rel="icon" href="src/assets/img/html.icon.svg">
+    <link rel="apple-touch-icon" href="src/assets/img/html.icon.svg"> -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../src/css/app.css">
+  </head>
+
+  <body>
+    <header id="header"></header>
+    
+    <main class="demo">
+        <div class="container">
+            <section id="demo" class="mb-5">
+                <a hyperlink href="#demo" ><h1 class="mb-5 text-center">Demo</h1></a>
+                <div class="d-flex align-items-center mb-3">
+                    <input id="predefinedcheckbox" class="form-check-input mt-0" type="checkbox">
+                    <label for="predefinedcheckbox" class="form-label mb-0 ms-2">Predefined Masks</label>
+                </div>
+                <div class="custommask input-group mb-3">
+                    <input id="prefix" type="text" class="form-control w-20" placeholder="Prefix">
+                    <input id="mask" type="text" class="form-control w-60" placeholder="Mask, indicator: 0">
+                    <input id="suffix" type="text" class="form-control w-20" placeholder="Suffix">
+                </div>
+                <div class="custommask align-items-center ">
+                    <input id="reverse" class="form-check-input mt-0" type="checkbox">
+                    <label for="reverse" class="form-label mb-0 ms-2">Reverse</label>
+                </div>
+
+                <select id="predefinedselect" class="form-select">
+                    <option selected style="display: none;" value="">Select a predefined mask</option>
+                    <option value="cpf">cpf</option>
+                    <option value="cnpj">cnpj</option>
+                    <option value="tel">tel</option>
+                    <option value="ddd">ddd</option>
+                    <option value="cel">cel</option>
+                    <option value="ddd">ddd</option>
+                    <option value="cep">cep</option>
+                    <option value="date">date</option>
+                    <option value="time">time</option>
+                    <option value="dateTime">dateTime</option>
+                    <option value="currency">currency</option>
+                    <option value="centimeter">centimeter</option>
+                    <option value="meter">meter</option>
+                    <option value="ip">ip</option>
+                    <option value="letter">letter</option>
+                    <option value="number">number</option>
+                    <option value="numbers-characters">numbers-characters</option>
+                </select>
+
+                <input id="maskformat" type="text" class="form-control w-100 mt-5 mb-2" readonly placeholder="Mask Format">
+                <input id="result" fieldmask="cpf" type="text" class="form-control w-100 " placeholder="Result">
+            </section>
+
+            <br/>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+    
+    <!-- JavaScript tags -->
+    <script type="text/javascript" src="../src/js/fieldmask.js"></script>
+    <script src="../src/js/astronaut.library.js"></script>
+    <script src="../src/js/app.js" type="module"></script>
+    <script src="../src/js/demo.js" type="module"></script>
+
+
+  </body>
+</html>

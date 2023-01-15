@@ -1,0 +1,30 @@
+{
+  "name": "@fieldmask/doc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently -kill-others -p none \"npm run start\" \"npm run watch\"",
+    "start": "live-server . --port=5500",
+    "watch": "sass --watch --no-source-map --style=compressed src/scss:src/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fieldmask/doc.git"
+  },
+  "author": "André Malveira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fieldmask/doc/issues"
+  },
+  "homepage": "https://github.com/fieldmask/doc#readme",
+  "devDependencies": {
+    "concurrently": "^7.4.0",
+    "live-server": "^1.2.2",
+    "sass": "^1.54.9"
+  },
+  "dependencies": {
+    "boostrap": "^2.0.0",
+    "bootstrap": "^5.3.0-alpha1"
+  }
+}

@@ -1,0 +1,13 @@
+
+footer {
+    .footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: $footer;
+
+        small {
+            color: $font-over;
+        }
+    }
+}

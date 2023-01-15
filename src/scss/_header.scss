@@ -1,0 +1,30 @@
+
+header {
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: $header;
+
+        .slogan {
+            display: flex;
+            flex-direction: column;
+            user-select: none;
+            color: $font-main;
+            
+            &:hover {
+                text-decoration: none;
+            }
+            h1 {
+                font-size: 1.5rem;
+                margin: 0;
+            }
+            span {
+                color: $font-over;
+                font-size: 0.9rem;
+            }
+        }
+
+    }
+    border-bottom: solid 1px $background-light;
+}
