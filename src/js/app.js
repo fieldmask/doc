@@ -1,6 +1,9 @@
+import { setBaseUrl } from './base.js'
 
 import { Header } from './components/header.js'
 import { Footer } from './components/footer.js'
+
+setBaseUrl();
 
 Header();
 Footer();

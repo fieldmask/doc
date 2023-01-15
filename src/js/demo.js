@@ -75,7 +75,6 @@ predefinedselect.onchange = function (e) {
 const setMask = (value) => {
     result.setAttribute('fieldmask', value)
     fieldmask()
-    console.log(value)
     if($formatMask && value) {
         maskformat.value = JSON.stringify($formatMask[value]).replace(',{', ', { ').replace('}]', ' }]').replace(',"', ', "')
     }
